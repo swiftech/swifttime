@@ -1,25 +1,27 @@
 ## SwiftTime 
 
 SwiftTime is a very light weight extension of Java GregorianCalendar class. 
-Provides more common operation for you to easily manipulating time but no any other dependencies needed.
+Provides more common operation for you to easily manipulating time without any other dependencies.
 
 
 ## Features
-* Easily increase or decrease single fields of time.
-* Truncating time.
+* Easily increase or decrease any field of time.
+* Truncate time at any field of time.
+* Get interval at any filed of time.
+* First or last day of current month or week.
 * Month starts with 1 not 0 by GregorianCalendar default.
 
 
 ## Tutorial
 
 #### Construct
-You can construct your new time simply by:
+You can construct a new Time simply by:
 ```java
 // t is just current time whose value is the same to System.currentTimeMillis().
 Time t = new Time();
 ```
 
-or from other time objects:
+or from other time types:
 ```java
 java.util.Date date = new java.util.Date();
 ...
@@ -58,8 +60,8 @@ System.out.println(t);
 ```
 
 #### Interval for fields
-Calculate time interval by single time field is tedious because you have to consider the carry of time field.
-By SwiftTime you can easily get interval from one Time to another for any single field of time:
+Calculate time interval at single time field is tedious because you have to consider the carry of time field.
+Now you can easily get interval at any field from one Time to another. eg:
 ```java
 Time t1 = new Time(2018);
 Time t2 = new Time(2000);
@@ -67,18 +69,18 @@ t1.getYearIntervalFrom(t2);
 System.out.println(t);
 > 18
 ```
-of course other fields of time can be done as well.
+> of course other fields of time can be done as well.
 
 
 #### Set time
 * Set time to the first day of this week
 ```java
-t.setToFirstDayOfThisWeek();
+t.setToFirstDayOfCurrentWeek();
 ```
 
 * Set time to the last day of this week
 ```java
-t.setToLastDayOfThisWeek();
+t.setToLastDayOfCurrentWeek();
 ```
 
 
@@ -91,14 +93,24 @@ You can use methods of Time combined to get useful effect, eg:
 t.setDate(3).truncateAtHour();
 
 // get the first second of the first day of this week
-t.setToFirstDayOfThisWeek().truncateAtHour();
+t.setToFirstDayOfCurrentWeek().truncateAtHour();
 ```
 
 
 #### Misc
 ```java
 // get days of month
-Time.getDaysOfThisMonth(t);
+Time.getDaysOfCurrentMonth(t);
 
 
+```
+
+
+#### Maven
+```xml
+<dependency>
+	<groupId>com.github.swiftech</groupId>
+	<artifactId>swifttime</artifactId>
+	<version>0.1</version>
+</dependency>
 ```
