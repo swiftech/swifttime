@@ -105,10 +105,15 @@ public class Time extends GregorianCalendar {
         this.setTime(date);
     }
 
+    public Time(long timeInMillis) {
+        this.setTimeInMillis(timeInMillis);
+    }
+
     public Time(Long timeInMillis) {
         if (timeInMillis == null) {
             this.setTimeInMillis(0);
-        }else {
+        }
+        else {
             this.setTimeInMillis(timeInMillis);
         }
     }
