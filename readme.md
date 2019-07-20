@@ -111,6 +111,6 @@ Time.getDaysOfCurrentMonth(t);
 <dependency>
 	<groupId>com.github.swiftech</groupId>
 	<artifactId>swifttime</artifactId>
-	<version>0.1</version>
+	<version>0.2.1</version>
 </dependency>
 ```

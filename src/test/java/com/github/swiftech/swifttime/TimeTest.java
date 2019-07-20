@@ -242,8 +242,8 @@ public class TimeTest {
         instance.setToFirstDayOfCurrentWeek();
         assertEquals(expResult, instance);
 
-        instance = new Time(2012, 12, 2, 6, 0, 0);
-        expResult = new Time(2012, 11, 26, 6, 0, 0);
+        instance = new Time(2019, 7, 27, 6, 0, 0);
+        expResult = new Time(2019, 7, 21, 6, 0, 0);
         instance.setToFirstDayOfCurrentWeek();
         assertEquals(expResult, instance);
     }
@@ -268,8 +268,8 @@ public class TimeTest {
         instance.setToLastDayOfCurrentWeek();
         assertEquals(expResult, instance);
 
-        instance = new Time(2012, 12, 2);
-        expResult = new Time(2012, 12, 2);
+        instance = new Time(2019, 7, 21);
+        expResult = new Time(2019, 7, 27);
         instance.setToLastDayOfCurrentWeek();
         assertEquals(expResult, instance);
     }

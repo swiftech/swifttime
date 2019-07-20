@@ -69,46 +69,101 @@ public class Time extends GregorianCalendar {
         super(year, month - 1, dayOfMonth, hourOfDay, minute, second);
     }
 
+    /**
+     *
+     * @param year
+     * @param month         Month starts from 1
+     * @param dayOfMonth    1-31
+     * @param hourOfDay     0-23
+     * @param minute        0-59
+     */
     public Time(int year, int month, int dayOfMonth, int hourOfDay, int minute) {
         super(year, month - 1, dayOfMonth, hourOfDay, minute);
     }
 
+    /**
+     *
+     * @param year
+     * @param month
+     * @param dayOfMonth    1-31
+     * @param hourOfDay     0-23
+     */
     public Time(int year, int month, int dayOfMonth, int hourOfDay) {
         super(year, month - 1, dayOfMonth, hourOfDay, 0);
     }
 
+    /**
+     *
+     * @param year
+     * @param month
+     * @param dayOfMonth    1-31
+     */
     public Time(int year, int month, int dayOfMonth) {
         super(year, month - 1, dayOfMonth);
     }
 
+    /**
+     *
+     * @param year
+     * @param month
+     */
     public Time(int year, int month) {
         super(year, month - 1, 1);
     }
 
+    /**
+     *
+     * @param year
+     */
     public Time(int year) {
         super(year, 0, 1);
     }
 
+    /**
+     *
+     * @param zone
+     * @param aLocale
+     */
     public Time(TimeZone zone, Locale aLocale) {
         super(zone, aLocale);
     }
 
+    /**
+     *
+     * @param aLocale
+     */
     public Time(Locale aLocale) {
         super(aLocale);
     }
 
+    /**
+     *
+     * @param zone
+     */
     public Time(TimeZone zone) {
         super(zone);
     }
 
+    /**
+     *
+     * @param date
+     */
     public Time(Date date) {
         this.setTime(date);
     }
 
+    /**
+     *
+     * @param timeInMillis
+     */
     public Time(long timeInMillis) {
         this.setTimeInMillis(timeInMillis);
     }
 
+    /**
+     *
+     * @param timeInMillis
+     */
     public Time(Long timeInMillis) {
         if (timeInMillis == null) {
             this.setTimeInMillis(0);
